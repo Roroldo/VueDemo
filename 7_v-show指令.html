@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <!-- v-show="" 支持表达式，最终被解析为布尔表达式 --> 
+      <!-- v-show="" 支持表达式，最终被解析为布尔表达式，本质上是标签属性 display控制 --> 
       <input type="button" value="切换显示状态" @click="changeIsShow">
       <input type="button" value="累加年龄" @click="addAge">
       <img v-show="isShow" src="./img/monkey.gif" alt="">
