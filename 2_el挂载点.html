@@ -5,27 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue基础</title>
+  <title>el:挂载点</title>
 </head>
 
-<body>
-    <div id="app">
+<body id="body">
+    
+    <div id="app" class="app">
         {{message}}
+        <span>{{message}}</span>
     </div>
 
-    <!--1. 导入 js-->
     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script>
-
-        // 2. 创建 vue 实例
+        /*
+            el 可以挂载在 id、class、标签选择器（body、html 特殊标签除外）上
+            只要是挂载点管辖的范围都能使用插值表达式来获取数据
+        */
         var app = new Vue({
-            el:"#app",
+            // el:"#app",
+            // el:".app",
+            el:"div",
+            // el:"#body",
             data:{
-                message:"Hello Vue!"
+                message:"Roroldo"
             }
         })
     </script>
+
 </body>
+
 </html>

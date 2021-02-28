@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-on 指令基础</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-on: 可以简写成@ -->
+        <input type="button" value="单击事件" v-on:click="fun1">
+        <input type="button" value="改变内容" v-on:click="changeContent">
+        <input type="button" value="双击事件" @dblclick="fun1">
+        <hr/>
+
+        鼠标来了事件: <input type="text" v-on:mouseenter="fun2"> <br>
+        键盘enter按下事件: <input type="text" @keyup.enter="fun2('世界')">
+        <h2>动态改变内容：{{food}}</h2>
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:"Hello world",
+                food:"西红柿炒蛋",
+            },
+            // 定义绑定的方法
+            methods:{
+                fun1:function(){
+                    alert(this.message);
+                },
+
+                changeContent:function(){
+                    this.food += "再加个鸡蛋";
+                },
+
+                fun2:function(info) {
+                    if (info != null) {
+                        console.log(info);
+                    } else {
+                        alert("你好！");
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

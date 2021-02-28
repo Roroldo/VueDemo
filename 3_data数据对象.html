@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>data:数据对象</title>
+</head>
+
+<body>
+    
+    <div id="app" class="app">
+        <!--取值只需要遵守json格式即可-->
+        {{ me }}
+        <h2>{{"我是" + student.name}}, {{"今年" + student.age}}</h2>
+        爱好是：
+        <ul>
+            <li>{{hobby[0]}}</li>
+            <li>{{hobby[1]}}</li>
+            <li>{{hobby[2]}}</li>
+        </ul>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+
+        var app = new Vue({
+            el:"#app",
+            data:{
+                me:"joicy",
+                // 对象json 数据
+                student:{
+                    name:"小黑",
+                    age:13
+                },
+                // 数组json 数据
+                hobby:[
+                    "篮球",
+                    "羽毛球",
+                    "足球"
+                ]
+            }
+        })
+    </script>
+
+</body>
+
+</html>
